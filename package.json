@@ -19,6 +19,7 @@
     "eslint-config-airbnb-base": "14.x",
     "eslint-plugin-import": "2.x",
     "hint": "7.x",
+    "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.1.0",
     "postcss-preset-env": "^8.2.0",

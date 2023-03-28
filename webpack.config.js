@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -7,6 +8,11 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public', 'index.html'),
+    }),
+  ],
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'public'),
@@ -15,7 +21,6 @@ module.exports = {
     open: true,
     hot: true,
     compress: true,
-    historyApiFallback: true,
   },
   module: {
     rules: [

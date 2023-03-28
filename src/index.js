@@ -43,7 +43,7 @@ class Todos {
       p.classList.add('text-gray-500');
       p.textContent = todo.decription;
       const i = document.createElement('i');
-      i.classList.add('fa', 'fa-up-down-left-right', 'text-sm', 'cursor-pointer');
+      i.classList.add('fa', 'fa-ellipsis-v', 'text-sm', 'cursor-move', 'text-gray-500', 'hove');
       i.setAttribute('aria-hidden', 'true');
 
       div2.appendChild(input);
