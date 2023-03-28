@@ -5,7 +5,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack"
+    "build": "webpack",
+    "stylelint": "stylelint \"**/*.{css,scss}\"",
+    "eslint": "eslint .",
+    "hint": "hint .",
+    "test": "npm run stylelint && npm run eslint && npm run hint",
+    "fix": "stylelint \"**/*.{css,scss}\" --fix && eslint . --fix"
   },
   "devDependencies": {
     "css-loader": "^6.7.3",
@@ -16,7 +21,16 @@
     "tailwindcss": "^3.3.0",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.1"
+    "webpack-dev-server": "^4.13.1",
+    "babel-eslint": "10.x",
+    "eslint": "7.x",
+    "eslint-config-airbnb-base": "14.x",
+    "eslint-plugin-import": "2.x",
+    "hint": "7.x",
+    "stylelint": "13.x",
+    "stylelint-config-standard": "21.x",
+    "stylelint-csstree-validator": "1.x",
+    "stylelint-scss": "3.x"
   },
   "dependencies": {
     "lodash": "^4.17.21"

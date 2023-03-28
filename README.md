@@ -150,7 +150,7 @@ If you like this project feel free to leave comments and contact via given autho
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- [microverse](https://www.microverse.org/)) 
+- [microverse](https://www.microverse.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
