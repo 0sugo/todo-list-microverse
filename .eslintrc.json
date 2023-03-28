@@ -21,7 +21,9 @@
       "import/no-unresolved": "off"
     },
     "ignorePatterns": [
-      "dist/",
-      "build/"
+      "public/",
+      "postcss.config.js",
+      "webpack.config.js",
+      "tailwind.config.js"
     ]
   }
