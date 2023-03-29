@@ -4,10 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpack App</title>
-  </head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Todo list</title>
+  <script defer src="bundle.js"></script></head>
   <body>
-    <h1 class="text-4xl text-blue-700">My Webpack + Tailwind App</h1>
-    <script type="module" src="./bundle.js"></script>
+    <main class="bg-gray-200 h-screen flex items-center px-4 justify-center">
+      <div class="mx-auto bg-white rounded-md container shadow-lg">
+        <div class="flex justify-between items-center p-4 border-b border-gray-200">
+          <h3 class="text-lg font-light"> Today's Todo List</h3>
+          <i class="fa fa-refresh cursor-pointer" aria-hidden="true"></i>
+        </div>
+        <form id="todo-form" onsubmit="" class="p-4 border-b relative border-gray-200">
+          <input type="text" id="todo-input" required class="w-full px-4 py-2 outline-none focus:border-b border-black placeholder:italic" placeholder="Add to your list">
+          <i class="fa fa-angle-right absolute top-1/2 right-5 text-sm text-gray-400"></i>
+        </form>
+        <div id="todo-list">
+        </div>
+        <div class="p-4 flex items-center justify-center">
+          <button class="px-4 py-2 rounded-md text-sm font-light">Clear Completed</button>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
