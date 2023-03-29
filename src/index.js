@@ -1,8 +1,6 @@
 import './style.css';
 import './input.css';
-import { addTodo, removeTodo, markCompleted } from './todoCrud';
-
-console.log('Hello world');
+import { addTodo, removeTodo, markCompleted } from './todoCrud.js';
 
 const todoList = document.querySelector('#todo-list');
 const todoForm = document.querySelector('#todo-form');
@@ -17,7 +15,7 @@ const showTrash = (index) => {
   trash.classList.remove('hidden');
 };
 
-export class Todo {
+class Todo {
   constructor(decription, completed, index) {
     this.decription = decription;
     this.completed = completed;
@@ -64,7 +62,7 @@ class Todos {
       input.type = 'checkbox';
       input.checked = todo.completed;
       input.addEventListener('change', () => {
-        markCompleted(todo.index);
+        markCompleted(todo.index, this);
         input.checked = todo.completed;
       });
       input.classList.add('mr-2');
@@ -83,7 +81,7 @@ class Todos {
       i.setAttribute('aria-hidden', 'true');
       const i2 = document.createElement('i');
       i2.addEventListener('click', () => {
-        removeTodo(todo.index);
+        removeTodo(todo.index, this);
       });
       i2.classList.add('fa', 'fa-trash', 'text-sm', 'cursor-move', 'text-gray-500', 'hidden');
       i2.setAttribute('aria-hidden', 'true');
@@ -99,17 +97,15 @@ class Todos {
   }
 }
 
+const todos = new Todos();
+
 todoForm.addEventListener('submit', (e) => {
-  console.log('submit')
   e.preventDefault();
   if (input.value !== '') {
-    addTodo(input.value);
+    addTodo(Todo, todos, input.value);
     input.value = '';
-  }else{
-    alert('Please enter a todo');
-  };
+  }
 });
 
-export const todos = new Todos();
 todos.retrieve();
 todos.render();
