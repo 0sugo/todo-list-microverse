@@ -28,9 +28,9 @@ const editDescription = (id, todos, description) => {
 };
 
 const clearCompleted = (todos) => {
-    todos.todos = todos.todos.filter((t) => t.completed === false);
-    todos.save();
-    todos.render();
+  todos.todos = todos.todos.filter((t) => t.completed === false);
+  todos.save();
+  todos.render();
 };
 
 export {

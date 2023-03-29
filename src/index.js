@@ -18,7 +18,6 @@ const showTrash = (index) => {
   trash.classList.remove('hidden');
 };
 
-
 class Todo {
   constructor(decription, completed, index) {
     this.decription = decription;
@@ -115,7 +114,6 @@ const todos = new Todos();
 clearBtn.addEventListener('click', () => {
   clearCompleted(todos);
 });
-
 
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
