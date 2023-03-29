@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <title>Todo list</title>
-  </head>
+  <script defer src="bundle.js"></script></head>
   <body>
     <main class="bg-gray-200 h-screen flex items-center px-4 justify-center">
       <div class="mx-auto bg-white rounded-md container shadow-lg">
@@ -14,10 +14,10 @@
           <h3 class="text-lg font-light"> Today's Todo List</h3>
           <i class="fa fa-refresh cursor-pointer" aria-hidden="true"></i>
         </div>
-        <div class="p-4 border-b relative border-gray-200">
-          <input type="text" class="w-full px-4 py-2 outline-none focus:border-b border-black placeholder:italic" placeholder="Add to your list">
+        <form id="todo-form" onsubmit="" class="p-4 border-b relative border-gray-200">
+          <input type="text" id="todo-input" required class="w-full px-4 py-2 outline-none focus:border-b border-black placeholder:italic" placeholder="Add to your list">
           <i class="fa fa-angle-right absolute top-1/2 right-5 text-sm text-gray-400"></i>
-        </div>
+        </form>
         <div id="todo-list">
         </div>
         <div class="p-4 flex items-center justify-center">
@@ -25,6 +25,5 @@
         </div>
       </div>
     </main>
-    <script type="module" src="./bundle.js"></script>
   </body>
 </html>

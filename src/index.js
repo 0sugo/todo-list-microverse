@@ -1,9 +1,14 @@
 import './style.css';
 import './input.css';
+import { addTodo, removeTodo } from './todoCrud';
+
+console.log('Hello world');
 
 const todoList = document.querySelector('#todo-list');
+const todoForm = document.querySelector('#todo-form');
+const input = document.querySelector('#todo-input');
 
-class Todo {
+export class Todo {
   constructor(decription, completed, index) {
     this.decription = decription;
     this.completed = completed;
@@ -13,12 +18,7 @@ class Todo {
 
 class Todos {
   constructor() {
-    this.todos = [
-      new Todo('Learn JavaScript', false, 0),
-      new Todo('Learn Angular', false, 1),
-      new Todo('Learn React', false, 2),
-      new Todo('Learn Vue', false, 3),
-    ];
+    this.todos = [];
   }
 
   add(todo) {
@@ -27,6 +27,9 @@ class Todos {
 
   remove(todo) {
     this.todos = this.todos.filter((t) => t !== todo);
+    this.todos.forEach((t, i) => {
+      t.index = i;
+    });
   }
 
   render() {
@@ -55,5 +58,16 @@ class Todos {
   }
 }
 
-const todos = new Todos();
+todoForm.addEventListener('submit', (e) => {
+  console.log('submit')
+  e.preventDefault();
+  if (input.value !== '') {
+    addTodo(input.value);
+    input.value = '';
+  }else{
+    alert('Please enter a todo');
+  };
+});
+
+export const todos = new Todos();
 todos.render();
