@@ -1,6 +1,8 @@
 import './style.css';
 import './input.css';
-import { addTodo, removeTodo, markCompleted } from './todoCrud.js';
+import {
+  addTodo, removeTodo, markCompleted, editDescription,
+} from './todoCrud.js';
 
 const todoList = document.querySelector('#todo-list');
 const todoForm = document.querySelector('#todo-form');
@@ -68,6 +70,15 @@ class Todos {
       input.classList.add('mr-2');
       const p = document.createElement('p');
       p.classList.add('text-gray-700');
+      p.addEventListener('click', () => {
+        p.contentEditable = true;
+        p.focus();
+      });
+      p.addEventListener('focusout', () => {
+        p.contentEditable = false;
+        editDescription(todo.index, this, p.textContent);
+      });
+
       if (todo.completed) {
         p.classList.add('line-through');
       }
@@ -83,7 +94,7 @@ class Todos {
       i2.addEventListener('click', () => {
         removeTodo(todo.index, this);
       });
-      i2.classList.add('fa', 'fa-trash', 'text-sm', 'cursor-move', 'text-gray-500', 'hidden');
+      i2.classList.add('fa', 'fa-trash', 'text-sm', 'cursor-pointer', 'text-gray-500', 'hidden');
       i2.setAttribute('aria-hidden', 'true');
 
       div2.appendChild(input);
