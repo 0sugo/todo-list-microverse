@@ -1,12 +1,13 @@
 import './style.css';
 import './input.css';
 import {
-  addTodo, removeTodo, markCompleted, editDescription,
+  addTodo, removeTodo, markCompleted, editDescription, clearCompleted,
 } from './todoCrud.js';
 
 const todoList = document.querySelector('#todo-list');
 const todoForm = document.querySelector('#todo-form');
 const input = document.querySelector('#todo-input');
+const clearBtn = document.querySelector('#clear-btn');
 
 const showTrash = (index) => {
   const trash = document.querySelector('.fa-trash');
@@ -109,6 +110,10 @@ class Todos {
 }
 
 const todos = new Todos();
+
+clearBtn.addEventListener('click', () => {
+  clearCompleted(todos);
+});
 
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
