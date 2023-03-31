@@ -64,7 +64,7 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo 
-Live Demo is not available
+[live demo](http://todo.kimitawanjohi.live/public/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
