@@ -29,7 +29,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 awesome books<a name="about-project"></a>
+# 📖 Todo List Microverse<a name="about-project"></a>
 
 * A simple CRUD application for managing todos *
 
