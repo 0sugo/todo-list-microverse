@@ -9,10 +9,11 @@
     "stylelint": "stylelint \"**/*.{css,scss}\"",
     "eslint": "eslint .",
     "hint": "hint .",
-    "test": "npm run stylelint && npm run eslint && npm run hint",
+    "test": "jest --watchAll --coverage",
     "fix": "stylelint \"**/*.{css,scss}\" --fix && eslint . --fix"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.21.2",
     "babel-eslint": "10.x",
     "css-loader": "^6.7.3",
     "eslint": "7.x",
@@ -20,6 +21,7 @@
     "eslint-plugin-import": "2.x",
     "hint": "7.x",
     "html-webpack-plugin": "^5.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.1.0",
     "postcss-preset-env": "^8.2.0",
@@ -34,6 +36,7 @@
     "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
+    "jest": "^29.5.0",
     "lodash": "^4.17.21"
   }
 }
